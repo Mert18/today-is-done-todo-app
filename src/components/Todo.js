@@ -9,8 +9,8 @@ function Todo({ todo, index, completeTodo, removeTodo }) {
             </div>
 
             <div className="todo-buttons">
-                <button className="donebutton" onClick={() => completeTodo(index)}>done</button>
-                <button className="removebutton" onClick={() => removeTodo(index)}>delete</button>
+                <button className="donebutton" onClick={() => completeTodo(index)}>Done</button>
+                <button className="removebutton" onClick={() => removeTodo(index)}>Delete</button>
             </div>
         </div>
     );
