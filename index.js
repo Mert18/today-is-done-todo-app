@@ -84,6 +84,10 @@ app.delete("/todos/:id", async (req, res) => {
     }
 })
 
+app.get("*", (req, res) => {
+    res.sendFİle(path.join(__dirname, "client/build/index.html"))
+})
+
 app.listen(PORT, () => {
     console.log(`Server is up on ${PORT}`)
 })
