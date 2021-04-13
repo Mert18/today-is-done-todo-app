@@ -1,0 +1,99 @@
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    &__main {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        height: 96vh;
+    }
+
+    &__footer {
+        width: 100%;
+        background-color: $green-color;
+        height:5vh;
+    }
+    
+}
+
+.sidebar {
+    grid-column: 1 / 6;
+    background-color: $green-color;
+    color: $white-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &__header {
+        text-align: center;
+        padding: 2rem;
+        font-size: 2.4rem;
+    }
+    &__search {
+        text-align: center;
+        font-size: 1.3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        input {
+            width: 70%;
+            height: 10vh;
+            border: none;
+            border-bottom-right-radius: 2rem;
+            color: $black-color;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.5rem;
+            outline: none;
+            &:focus {
+                box-shadow: 0 0 0 2pt $black-color;
+            }
+        }
+    }
+
+    &__options {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 2rem;
+        * {
+            margin-right: 2rem;
+            &:last-child {
+                margin-right: 0rem;
+            }
+        }
+        select {
+            background: transparent;
+            padding: .4rem;
+            outline: none;
+        }
+
+        button {
+            background-color :$black-color;
+            color: $white-color;
+            font-weight: 600;
+            padding: .7rem;
+            border: none;
+            border-bottom-right-radius: .7rem;
+        }
+    }
+}
+.main {
+    grid-column: 6 / 13;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      grid-column: 1 / -1;
+  }
+  .main {
+      grid-column: 1 / -1;
+  }
+}
