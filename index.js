@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-const path = require('path');
 const pool = require('./db');
 
 const PORT = process.env.PORT || 5000;
@@ -14,17 +13,9 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-
-if (process.env.NODE_ENV == "production") {
-    //server static content
-    //npm run build
-    app.use(express.static(path.join(__dirname, "client/build")));
-}
-
 //ROUTES//
 
 //get all Todo
-
 app.get("/todos", async (req, res) => {
     try {
         const allTodos = await pool.query("SELECT * FROM todo");
@@ -35,7 +26,6 @@ app.get("/todos", async (req, res) => {
 })
 
 //get a todo
-
 app.get("/todos/:id", async (req, res) => {
     try {
         const { id } = req.params;
@@ -47,12 +37,12 @@ app.get("/todos/:id", async (req, res) => {
 })
 
 //create a todo
-
 app.post("/todos", async (req, res) => {
     try {
-        const { description } = req.body;
+        console.log(req.body)
+        const { description, time, priority } = req.body;
         const newTodo = await pool.query(
-            "INSERT INTO todo (description) VALUES ($1) RETURNING *", [description]
+            "INSERT INTO todo (description, time, priority) VALUES ($1, $2, $3) RETURNING *", [description, time, priority]
         )
         res.status(200).json(newTodo.rows[0]);
     } catch (error) {
@@ -61,7 +51,6 @@ app.post("/todos", async (req, res) => {
 })
 
 //update a todo
-
 app.put("/todos/:id", async (req, res) => {
     try {
         const { id } = req.params;

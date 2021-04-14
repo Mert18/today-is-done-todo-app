@@ -14,15 +14,16 @@
 
     &__footer {
         width: 100%;
-        background-color: $green-color;
+        background-color: $black-color;
         height:5vh;
+        color: $white-color;
     }
     
 }
 
 .sidebar {
     grid-column: 1 / 6;
-    background-color: $green-color;
+    background-color: $black-color;
     color: $white-color;
     display: flex;
     flex-direction: column;
@@ -34,59 +35,103 @@
         padding: 2rem;
         font-size: 2.4rem;
     }
-    &__search {
-        text-align: center;
-        font-size: 1.3rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        input {
-            width: 70%;
-            height: 10vh;
-            border: none;
-            border-bottom-right-radius: 2rem;
-            color: $black-color;
-            text-align: center;
-            font-weight: 600;
-            font-size: 1.5rem;
-            outline: none;
-            &:focus {
-                box-shadow: 0 0 0 2pt $black-color;
-            }
-        }
-    }
 
-    &__options {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding: 2rem;
-        * {
-            margin-right: 2rem;
-            &:last-child {
-                margin-right: 0rem;
-            }
-        }
-        select {
-            background: transparent;
-            padding: .4rem;
-            outline: none;
-        }
 
-        button {
-            background-color :$black-color;
-            color: $white-color;
-            font-weight: 600;
-            padding: .7rem;
-            border: none;
-            border-bottom-right-radius: .7rem;
-        }
-    }
+    
 }
 .main {
     grid-column: 6 / 13;
+}
+
+.sidebar__desc input {
+    width: 100%;
+    height: 10vh;
+    border: none;
+    border-bottom-right-radius: 2rem;
+    color: $black-color;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    outline: none;
+    &:focus {
+        box-shadow: 0 0 0 2pt $black-color;
+    }
+}
+.sidebar__desc {
+    position: relative;
+}
+.sidebar__desc label {
+    position: absolute;
+    color: $white-color;
+    font-weight: 600;
+    top: -20px;
+}
+.sidebar__time {
+    position: relative;
+}
+.sidebar__time label {
+    position: absolute;
+    color: $white-color;
+    font-weight: 600;
+    top: 0px;
+}
+.sidebar__time input {
+    margin-top: 1rem;
+    width: 50%;
+    height: 5vh;
+    border: none;
+    color: $black-color;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    outline: none;
+    &:focus {
+        box-shadow: 0 0 0 2pt $black-color;
+    }
+}
+
+.sidebar__prio {
+    position: relative;
+}
+label {
+    font-size: .8rem;
+}
+.form * {
+    padding: .4rem;
+}
+.sidebar__prio label {
+    position: absolute;
+    color: $white-color;
+    font-weight: 600;
+    top: 0px;
+}
+.sidebar__prio select {
+    margin-top: 1rem;
+    width: 50%;
+    height: 5vh;
+    border: none;
+    color: $black-color;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    outline: none;
+    &:focus {
+        box-shadow: 0 0 0 2pt $black-color;
+    }
+}
+button {
+    margin-top: 1rem;
+    background-color :$white-color;
+    color: $black-color;
+    font-weight: 600;
+    padding: .7rem;
+    border: none;
+    border-bottom-right-radius: .7rem;
+
+    &:hover {
+        cursor: pointer;
+        background-color: black;
+    }
 }
 
 @media (max-width: 768px) {
