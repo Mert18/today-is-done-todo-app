@@ -11,9 +11,6 @@ const App = () => {
                 <Sidebar />
                 <Content />
             </main>
-            <footer className="container__footer">
-                <h2>hello footer</h2>
-            </footer>
         </div>
     )
 }

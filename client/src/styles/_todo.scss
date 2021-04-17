@@ -1,48 +1,43 @@
 
 .todo {
     padding: 2rem;
-    border: 2px solid $black-color;
     margin: 2rem;
     font-size: 1rem;
+    color: $pink-color;
     &__text {
         font-size: 1.4rem;
     }
-    &__others {
-        display: flex;
-        padding: 1rem;
-        justify-content: center;
-        align-items: center;
-        &__dyn {
-            display: flex;
-            * {
-                margin-right: 2rem;
-            }
+}
+
+.todox {
+    position: relative;
+}
+
+.todox__btn {
+    display: flex;
+    position: absolute;
+    top: 80%;
+    left: 60%;
+
+    div {
+        padding: .7rem;
+        border-radius: 2rem;
+        &:hover {
+            cursor: pointer;
+            background-color: rgba(128, 128, 128, 0.123);
         }
-        &__buttons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            button {
-                height: 5vh;
-                text-align: center;
-                font-weight: 600;
-                border: none;
-                color: white;
-                padding: .5rem;
-                &:hover {
-                    cursor: pointer;
-                    outline: 2px solid $black-color;
-                }
-            }
-        }
-        
     }
 }
 
-.success {
-    background-color: green;
 
-}
-.fail {
-    background-color: red;
-}
+
+
+
+
+@media (max-width: 768px) {
+    .todo__others__buttons {
+        button{
+            height: 10vh;
+        }
+    }
+  }
